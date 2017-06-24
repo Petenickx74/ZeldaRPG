@@ -62,6 +62,8 @@
      <Compile Include="Assets\Scripts\PlayerHealthManager.cs" />
      <Compile Include="Assets\Scripts\PlayerStartPoint.cs" />
      <Compile Include="Assets\Scripts\PlayerStats.cs" />
+     <Compile Include="Assets\Scripts\QuestManager.cs" />
+     <Compile Include="Assets\Scripts\QuestObject.cs" />
      <Compile Include="Assets\Scripts\SFXManager.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Scripts\dialogHolder.cs" />
