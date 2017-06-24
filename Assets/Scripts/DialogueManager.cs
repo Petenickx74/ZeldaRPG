@@ -10,18 +10,35 @@ public class DialogueManager : MonoBehaviour {
 
 	public bool dialogActive;
 
+	public string[] dialogLines;
+	public int currentLine;
+
+	private PlayerController thePlayer;
+
 	// Use this for initialization
 	void Start () {
-		
+		thePlayer = FindObjectOfType<PlayerController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (dialogActive && Input.GetKeyDown (KeyCode.Space)) 
-		{
-			dBox.SetActive (false);
-			dialogActive = false;
+		if (dialogActive && Input.GetKeyDown (KeyCode.Space)) {
+			//dBox.SetActive (false);
+			//dialogActive = false;
+
+			currentLine++;
 		}
+
+		if (currentLine >= dialogLines.Length) 
+		{
+			dBox.SetActive(false);
+			dialogActive = false;
+
+			currentLine = 0;
+			thePlayer.canMove = true;
+		}
+
+		dText.text = dialogLines [currentLine];
 	}
 
 	public void ShowBox(string dialogue)
@@ -29,5 +46,12 @@ public class DialogueManager : MonoBehaviour {
 		dialogActive = true;
 		dBox.SetActive (true);
 		dText.text = dialogue;
+	}
+
+	public void ShowDialogue()
+	{
+		dialogActive = true;
+		dBox.SetActive (true);
+		thePlayer.canMove = false;
 	}
 }

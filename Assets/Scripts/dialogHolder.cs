@@ -7,6 +7,8 @@ public class dialogHolder : MonoBehaviour {
 	public string dialogue;
 	private DialogueManager dMAn;
 
+	public string[] dialogueLines;
+
 	// Use this for initialization
 	void Start () {
 		dMAn = FindObjectOfType<DialogueManager> ();
@@ -18,13 +20,25 @@ public class dialogHolder : MonoBehaviour {
 		
 	}
 
-	void OnTriggerStay2D(Collision2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
 		if(other.gameObject.name == "Player")
 		{
-			if(Input.GetKeyDown(KeyCode.Space))
+			if(Input.GetKeyUp(KeyCode.Space))
 			{
-				dMAn.ShowBox (dialogue);
+				//dMAn.ShowBox(dialogue);
+
+				if(!dMAn.dialogActive) 
+				{
+					dMAn.dialogLines = dialogueLines;
+					dMAn.currentLine = 0;
+					dMAn.ShowDialogue();
+				}
+
+				if (transform.parent.GetComponent<wizardMovement> () != null) 
+				{
+					transform.parent.GetComponent<wizardMovement> ().canMove = false;
+				}
 			}
 		}
 	}

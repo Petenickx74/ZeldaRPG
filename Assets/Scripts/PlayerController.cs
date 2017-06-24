@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 
 	public string startPoint;
 
-	private bool canMove;
+	public bool canMove;
 
 	private SFXManager sfxMan;
 
@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
 		playerMoving = false;
+
+		if (!canMove) 
+		{
+			myRigidbody.velocity = Vector2.zero;
+			return;
+		}
 
 		if (!attacking) 
 		{
