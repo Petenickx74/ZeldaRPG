@@ -1,11 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/QuestTrigger.cs">
     <Files>
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="38" Column="19" />
-      <File FileName="Assets/Scripts/dialogHolder.cs" Line="40" Column="71" />
-      <File FileName="Assets/Scripts/wizardMovement.cs" Line="52" Column="4" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="22" Column="2" />
+      <File FileName="Assets/Scripts/QuestTrigger.cs" Line="30" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
